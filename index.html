@@ -3,235 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para Anthonella ❤️</title>
+  <title>Querida Anthonella</title>
   <style>
-    /* Estilos generales */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      background-color: #f7d6d8; /* Tono rosado suave similar a las capturas */
+      background-color: #f5f0eb; /* Fondo beige cálido */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      color: #333;
+      color: #4a4238;
     }
 
-    /* Contenedor principal estilo pantalla de celular */
-    .card-container {
-      background-color: #fbe4e6;
+    /* Tarjeta principal */
+    .card {
+      background-color: #fffcf8; /* Beige suave */
       width: 90%;
-      max-width: 400px;
-      height: 650px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-      position: relative;
-      overflow: hidden;
+      max-width: 380px;
+      height: 580px;
+      border-radius: 24px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      padding: 24px;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      text-align: center;
     }
 
-    /* Diapositivas */
-    .slide {
-      display: none;
-      height: 100%;
-      padding: 25px;
-      flex-direction: column;
+    /* Botones de audio en la esquina superior derecha */
+    .audio-controls {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      display: flex;
+      gap: 8px;
+    }
+
+    .audio-btn {
+      background-color: #e8ded2;
+      border: none;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      animation: fadeIn 0.5s ease-in-out;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 14px;
+      transition: background-color 0.2s ease, transform 0.1s ease;
     }
 
-    .slide.active {
-      display: flex;
+    .audio-btn:active {
+      transform: scale(0.95);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    .audio-btn:hover {
+      background-color: #dcd0c0;
     }
 
-    /* Tipografías y títulos */
+    /* Contenido de la portada */
+    .content {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
     h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #2b2b2b;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: #1a1a1a;
-      text-transform: uppercase;
+      font-size: 26px;
       letter-spacing: 2px;
-      border-bottom: 2px solid #e08b98;
-      padding-bottom: 5px;
+      font-weight: 800;
+      color: #2c251e;
+      line-height: 1.3;
+      margin-bottom: 12px;
     }
 
-    p {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: #4a4a4a;
-      margin-bottom: 15px;
+    p.subtitle {
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      color: #8c7e6d;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 30px;
     }
 
-    /* Imágenes */
-    .photo-frame {
-      width: 100%;
-      max-height: 220px;
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 15px;
-      border: 3px solid #fff;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    .heart-icon {
+      font-size: 55px;
+      display: inline-block;
+      animation: pulse 2s infinite;
     }
 
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Lista del Menú / Temas */
-    .menu-list {
-      list-style: none;
-      text-align: left;
-      width: 100%;
-      padding: 0 20px;
-    }
-
-    .menu-list li {
-      font-size: 1.05rem;
-      margin: 10px 0;
-      color: #333;
-      font-weight: 500;
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
     }
 
     /* Botones de navegación */
     .nav-buttons {
-      position: absolute;
-      bottom: 15px;
       width: 100%;
       display: flex;
       justify-content: space-between;
-      padding: 0 20px;
     }
 
     .btn {
-      background-color: #e08b98;
-      color: white;
-      border: none;
-      padding: 10px 18px;
+      padding: 10px 20px;
       border-radius: 20px;
-      font-weight: bold;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: background 0.2s;
     }
 
-    .btn:hover {
-      background-color: #d17583;
-    }
-
-    .btn:disabled {
-      background-color: #ccc;
+    .btn-disabled {
+      background-color: #e0d8cf;
+      color: #a89d90;
       cursor: not-allowed;
+    }
+
+    .btn-next {
+      background-color: #dfaba2;
+      color: #ffffff;
+      box-shadow: 0 4px 10px rgba(223, 171, 162, 0.4);
     }
   </style>
 </head>
 <body>
 
-  <div class="card-container">
+  <!-- Audio vinculado con Vocaroo -->
+  <audio id="bgAudio" loop preload="auto">
+    <source src="https://media.vocaroo.com/mp3/105P8yqPVFBU" type="audio/mpeg">
+  </audio>
 
-    <div class="slide active">
+  <div class="card">
+    
+    <!-- Controles de Audio -->
+    <div class="audio-controls">
+      <button class="audio-btn" onclick="playAudio()" title="Reproducir audio">▶️</button>
+      <button class="audio-btn" onclick="pauseAudio()" title="Pausar audio">⏸️</button>
+    </div>
+
+    <!-- Contenido -->
+    <div class="content">
       <h1>QUERIDA<br>ANTHONELLA</h1>
-      <p style="margin-top: 15px; font-weight: 600;">CÓMO ME ENAMORÉ DE VOS...</p>
-      <div style="font-size: 3rem; margin-top: 20px;">💖</div>
+      <p class="subtitle">CÓMO ME ENAMORÉ DE VOS...</p>
+      
+      <!-- Corazón azul celeste -->
+      <div class="heart-icon">🩵</div>
     </div>
 
-    <div class="slide">
-      <div class="photo-frame">
-        <img src="https://via.placeholder.com/400x300?text=Foto+Juntos+1" alt="Nosotros">
-      </div>
-      <h2>TEMAS</h2>
-      <ul class="menu-list">
-        <li>• Agradecimiento</li>
-        <li>• ¿Cómo te conocí?</li>
-        <li>• ¿Por qué con vos?</li>
-        <li>• Perdón</li>
-        <li>• ¿Para toda la vida?</li>
-      </ul>
-    </div>
-
-    <div class="slide">
-      <h2>AGRADECIMIENTO 🥰</h2>
-      <div class="photo-frame">
-        <img src="https://via.placeholder.com/400x300?text=Foto+Juntos+2" alt="Foto">
-      </div>
-      <p>
-        Te quiero agradecer por todo lo que haces y das por mí, por lo compañera y leal, por ser mi mejor amiga a la vez, por bancarme mis cambios de humor o mis momentos difíciles, por escucharme hablar de mis sueños o metas... y sobre todo por haber aparecido en mi vida para cambiármela. Con vos soy muy feliz.
-      </p>
-    </div>
-
-    <div class="slide">
-      <h2>¿POR QUÉ CON VOS?</h2>
-      <div class="photo-frame">
-        <img src="https://via.placeholder.com/400x300?text=Foto+Juntos+3" alt="Foto">
-      </div>
-      <p>
-        Porque me demostraste tanto en tan poco tiempo como nadie lo hizo. Fuiste la persona que me impulsó a cumplir mis metas y a volver a intentar. Siento que con vos puedo ser yo mismo/a. En tan poco tiempo te volviste mi todo y la persona con la que quiero compartir mis días.
-      </p>
-    </div>
-
-    <div class="slide">
-      <h2>PERDÓN 🙏</h2>
-      <p>
-        Por las pequeñas peleas tontas, por molestarle a veces, por ser a veces malhumorado/a y por tratar de querer tenerlo todo y olvidarme de disfrutar el momento. Perdón por no poder darte siempre todo lo que te mereces.
-      </p>
-    </div>
-
-    <div class="slide">
-      <h2>¿PARA TODA LA VIDA? 🫶</h2>
-      <p>
-        Es lo que más quisiera. Quiero que seas la persona a la que mis ojos miren siempre. Quiero un futuro y una vida llena de vos, pase lo que pase. Verte sonreír y saber que sos feliz a mi lado es lo mejor del mundo. Te amo hoy, mañana y siempre.
-      </p>
-      <div style="font-size: 2.5rem;">✨</div>
-    </div>
-
+    <!-- Navegación -->
     <div class="nav-buttons">
-      <button class="btn" id="prevBtn" onclick="changeSlide(-1)" disabled>Anterior</button>
-      <button class="btn" id="nextBtn" onclick="changeSlide(1)">Siguiente</button>
+      <button class="btn btn-disabled" disabled>Anterior</button>
+      <button class="btn btn-next">Siguiente</button>
     </div>
 
   </div>
 
   <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+    const audio = document.getElementById('bgAudio');
 
-    function changeSlide(direction) {
-      slides[currentSlide].classList.remove('active');
-      currentSlide += direction;
+    function playAudio() {
+      audio.play().catch(error => {
+        console.log("Error al reproducir audio:", error);
+      });
+    }
 
-      if (currentSlide < 0) currentSlide = 0;
-      if (currentSlide >= slides.length) currentSlide = slides.length - 1;
-
-      slides[currentSlide].classList.add('active');
-
-      // Controlar estado de botones
-      prevBtn.disabled = currentSlide === 0;
-      nextBtn.disabled = currentSlide === slides.length - 1;
+    function pauseAudio() {
+      audio.pause();
     }
   </script>
+
 </body>
 </html>
