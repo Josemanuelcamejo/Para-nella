@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Anthonella ❤️</title>
+  <style>
+    /* Estilos generales */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f7d6d8; /* Tono rosado suave similar a las capturas */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* Contenedor principal estilo pantalla de celular */
+    .card-container {
+      background-color: #fbe4e6;
+      width: 90%;
+      max-width: 400px;
+      height: 650px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Diapositivas */
+    .slide {
+      display: none;
+      height: 100%;
+      padding: 25px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Tipografías y títulos */
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #2b2b2b;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      border-bottom: 2px solid #e08b98;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #4a4a4a;
+      margin-bottom: 15px;
+    }
+
+    /* Imágenes */
+    .photo-frame {
+      width: 100%;
+      max-height: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Lista del Menú / Temas */
+    .menu-list {
+      list-style: none;
+      text-align: left;
+      width: 100%;
+      padding: 0 20px;
+    }
+
+    .menu-list li {
+      font-size: 1.05rem;
+      margin: 10px 0;
+      color: #333;
+      font-weight: 500;
+    }
+
+    /* Botones de navegación */
+    .nav-buttons {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .btn {
+      background-color: #e08b98;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background-color: #d17583;
+    }
+
+    .btn:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+
+    <div class="slide active">
+      <h1>QUERIDA<br>ANTHONELLA</h1>
+      <p style="margin-top: 15px; font-weight: 600;">CÓMO ME ENAMORÉ DE VOS...</p>
+      <div style="font-size: 3rem; margin-top: 20px;">💖</div>
+    </div>
+
+    <div class="slide">
+      <div class="photo-frame">
+        <img src="https://via.placeholder.com/400x300?text=Foto+Juntos+1" alt="Nosotros">
+      </div>
+      <h2>TEMAS</h2>
+      <ul class="menu-list">
+        <li>• Agradecimiento</li>
+        <li>• ¿Cómo te conocí?</li>
+        <li>• ¿Por qué con vos?</li>
+        <li>• Perdón</li>
+        <li>• ¿Para toda la vida?</li>
+      </ul>
+    </div>
+
+    <div class="slide">
+      <h2>AGRADECIMIENTO 🥰</h2>
+      <div class="photo-frame">
+        <img src="https://via.placeholder.com/400x300?text=Foto+Juntos+2" alt="Foto">
+      </div>
+      <p>
+        Te quiero agradecer por todo lo que haces y das por mí, por lo compañera y leal, por ser mi mejor amiga a la vez, por bancarme mis cambios de humor o mis momentos difíciles, por escucharme hablar de mis sueños o metas... y sobre todo por haber aparecido en mi vida para cambiármela. Con vos soy muy feliz.
+      </p>
+    </div>
+
+    <div class="slide">
+      <h2>¿POR QUÉ CON VOS?</h2>
+      <div class="photo-frame">
+        <img src="https://via.placeholder.com/400x300?text=Foto+Juntos+3" alt="Foto">
+      </div>
+      <p>
+        Porque me demostraste tanto en tan poco tiempo como nadie lo hizo. Fuiste la persona que me impulsó a cumplir mis metas y a volver a intentar. Siento que con vos puedo ser yo mismo/a. En tan poco tiempo te volviste mi todo y la persona con la que quiero compartir mis días.
+      </p>
+    </div>
+
+    <div class="slide">
+      <h2>PERDÓN 🙏</h2>
+      <p>
+        Por las pequeñas peleas tontas, por molestarle a veces, por ser a veces malhumorado/a y por tratar de querer tenerlo todo y olvidarme de disfrutar el momento. Perdón por no poder darte siempre todo lo que te mereces.
+      </p>
+    </div>
+
+    <div class="slide">
+      <h2>¿PARA TODA LA VIDA? 🫶</h2>
+      <p>
+        Es lo que más quisiera. Quiero que seas la persona a la que mis ojos miren siempre. Quiero un futuro y una vida llena de vos, pase lo que pase. Verte sonreír y saber que sos feliz a mi lado es lo mejor del mundo. Te amo hoy, mañana y siempre.
+      </p>
+      <div style="font-size: 2.5rem;">✨</div>
+    </div>
+
+    <div class="nav-buttons">
+      <button class="btn" id="prevBtn" onclick="changeSlide(-1)" disabled>Anterior</button>
+      <button class="btn" id="nextBtn" onclick="changeSlide(1)">Siguiente</button>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function changeSlide(direction) {
+      slides[currentSlide].classList.remove('active');
+      currentSlide += direction;
+
+      if (currentSlide < 0) currentSlide = 0;
+      if (currentSlide >= slides.length) currentSlide = slides.length - 1;
+
+      slides[currentSlide].classList.add('active');
+
+      // Controlar estado de botones
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === slides.length - 1;
+    }
+  </script>
+</body>
+</html>
